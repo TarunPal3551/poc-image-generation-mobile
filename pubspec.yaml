@@ -39,6 +39,7 @@ dependencies:
   http: ^1.4.0
   dio: ^5.8.0+1
   pretty_dio_logger: ^1.4.0
+  flutter_gemini: ^3.0.0
 
 dev_dependencies:
   flutter_test:

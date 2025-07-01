@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quick_pick/Repository/image_controller.dart';
+import 'package:quick_pick/Screens/ai_generation.dart';
+
 
 class HomePage extends StatelessWidget {
   final ImageController controller = Get.put(ImageController());
@@ -67,6 +69,17 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
+              SizedBox(height: 10),
+              Center(child: Text("Or")),
+              SizedBox(height: 10),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Get.to(() => ImageGenExample());
+                  },
+                  child: Text("Generate Image with AI"),
+                ),
+              ),
             ],
           );
         }),
