@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
@@ -10,8 +11,7 @@ class AiController extends GetxController {
   final Rx<Uint8List?> generatedImageBytes = Rx<Uint8List?>(null);
   final RxString statusMessage = "Enter a prompt and generate an image!".obs;
 
-  static const String _apiKey =
-      'AIzaSyA7udc2entzYYuWSBAEqO81MFEo5LabLjM'; // Replace with your actual API Key
+  final String _apiKey = dotenv.env['GEMINI_API_KEY'] ?? '';
   static const String _baseUrl =
       'https://generativelanguage.googleapis.com/v1beta/models';
 
